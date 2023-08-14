@@ -1,4 +1,4 @@
-# ExcelFileReader Project Wiki
+# ExcelFileReader Project
 ## Introduction
 Welcome to the ExcelFileReader project! This project is an ASP.NET Core MVC 7 application designed to demonstrate how to use the ExcelDataReader NuGet package to read Excel files. The application allows users to upload Excel files, processes the data within them, and displays the contents to the user.
 
