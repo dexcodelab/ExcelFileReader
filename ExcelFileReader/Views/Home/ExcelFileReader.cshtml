@@ -1,0 +1,39 @@
+﻿<form method="post" enctype="multipart/form-data">
+    <div class="row">
+        <label>Select File</label>
+        <input type="file" name="file" />
+    </div>
+    <div class="row" style="padding-top: 10px;">
+        <div class="col-3">
+            <input type="submit" asp-controller="Home" asp-action="ExcelFileReader" class="btn btn-dark" value="Read Excel File" />
+        </div>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            @if (ViewBag.ExcelData != null && ViewBag.ExcelData.Count > 0)
+            {
+                @foreach (var header in ViewBag.ExcelData[0])
+                {
+                    <th>@header</th>   
+                }
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.ExcelData != null && ViewBag.ExcelData.Count > 1)
+        {
+            @for (int i = 1; i < ViewBag.ExcelData.Count; i++)
+            {
+                <tr>
+                    @foreach(var cell in ViewBag.ExcelData[i])
+                    {
+                        <td>@cell</td>
+                    }
+                </tr>   
+            }
+        }
+    </tbody>
+</table>
